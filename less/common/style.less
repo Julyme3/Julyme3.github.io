@@ -1,0 +1,163 @@
+@import "../../node_modules/normalize.less/normalize";
+@import "../helpers/_variables";
+@import "../helpers/_animations";
+@import "../helpers/_mixins";
+@import "scaffolding";
+@import "../blocks/nav";
+@import "../blocks/list-exp";
+
+html,
+body,
+.wrap {
+	height: 100%;
+  	min-width: @min-width;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  .container();
+}
+
+.header {
+  position: relative;
+  background: linear-gradient(to bottom, #7a19f1, @blue);
+  padding: 30px 0;
+  margin-bottom: 50px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: data-uri("../../img/bg.svg") center bottom/cover no-repeat;
+    opacity: 0.5;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: data-uri("../../img/line-bottom.svg") center top/cover no-repeat;
+    height: 200px;
+    width: 100%;
+    opacity: 0.1;
+  }
+
+  &__intro {
+    position: relative;
+    padding: 135px 0;
+    text-align: center;
+  }
+
+  &__title {
+    .h1-title();
+		letter-spacing: 6px;
+		color: @white;
+		margin: 0 auto;
+		color: @white;
+		text-shadow: -6px 4px 5px rgba(159, 119, 159, 1);
+
+		> span {
+			display: block;
+		}
+  }
+
+	&__title-second {
+		animation: blurFadeInOut 1.5s ease-in;
+	}
+
+	&__title-first {
+		opacity: 0;
+	}
+}
+
+.footer {
+  padding: 30px 0;
+  margin-top: auto;
+  background-color: #EEEEEE;
+
+	.container {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.social {
+  display: flex;
+  text-align: center;
+
+  &__item {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 2px solid @black;
+		cursor: pointer;
+
+    &:hover {
+      background-color: @white;
+			border-color: #2B414D;
+    }
+
+		a {
+	    display: block;
+	    width: 25px;
+	    height: 25px;
+			font-size: 0;
+		}
+  }
+
+  &__vk {
+
+		a {
+	    background: data-uri("../../img/social/vk.png") 0 no-repeat;
+		}
+
+    &:hover a {
+	    background: data-uri("../../img/social/vk-active.png") 0 no-repeat;
+    }
+  }
+
+	&__github {
+
+		a {
+    	background: data-uri("../../img/social/github.png") 0 no-repeat;
+		}
+
+		&:hover a {
+	    background: data-uri("../../img/social/github-active.png") 0 no-repeat;
+		}
+	}
+}
+
+.luck {
+	position: relative;
+	color: @dark-blue;
+	margin-left: auto;
+
+	&:before {
+		position: absolute;
+		content: '';
+		background: data-uri("../../img/social/happy.png") 0 no-repeat;
+		width: 24px;
+		height: 24px;
+		bottom: -25px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.letter {
+	opacity: 0;
+	display: inline-block;
+	position: relative;
+	font-size: 52px;
+	font-weight: bold;
+	letter-spacing: 10px;
+	animation: slowOpacity 1.2s linear forwards;
+}

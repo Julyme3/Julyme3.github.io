@@ -1,0 +1,49 @@
+.container() {
+  max-width: @max-width;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 @offset;
+
+  @media (max-width: @break-md) {
+    padding: 0 @offset-md;
+  }
+}
+
+.f-transition-base(@property: all, @time: .5s, @animate: ease) {
+    transition: @property @time @animate;
+}
+
+.font(@fontFamily: @font-base; @size: @font-size-base; @line-height: 1.2; @weight: normal) { // примесь для текста
+    font-family: @fontFamily;
+    font-size: @size;
+    line-height:  @line-height;
+    font-weight: @weight;
+}
+
+.text-base() {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.h3-title() {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.h1-title() {
+  font-size: 42px;
+  line-height: 52px;
+}
+
+// .from(@min_width, @content) {
+//     @media screen and (min-width: @min_width) {
+//         @content();
+//     }
+// }
+//
+// .to(@max_width, @content){
+//     @media screen and (max-width: @max_width){
+//         @content();
+//     }
+// }

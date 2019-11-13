@@ -1,0 +1,47 @@
+//@import "../helpers/_variables";
+
+.nav {
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item a {
+    .h3-title();
+    display: block;
+    position: relative;
+    padding: 10px;
+    color: @white;
+    margin: 0 10px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(-90deg,#8233ff,#dd89a3);
+      transform: scale(0, 1);
+      .f-transition-base(transform);
+    }
+
+    &:hover:after {
+      transform: scale(1);
+    }
+  }
+
+  &.sticky {
+    transition: all .3s;
+    position: fixed;
+    z-index: 1;
+    border-radius: @border-radius;
+    background: lighten(@black, 30%);
+  }
+
+}
+
+.sticky + .header__intro {
+  padding-top: 150px;
+}

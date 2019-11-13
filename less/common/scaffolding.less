@@ -1,0 +1,23 @@
+body {
+.font();
+  min-width: @min-width;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main {
+  min-height: ~"calc(100% - @{header-height} - @{footer-height})";
+}

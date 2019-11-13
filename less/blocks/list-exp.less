@@ -1,0 +1,113 @@
+.list-exp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  margin: 0 -5px;
+
+  &__item {
+    .text-base();
+    max-width: 315px;
+    width: 23%;
+    min-width: 235px;
+    margin: 0 5px 20px;
+    box-shadow: 0 1px 3px rgba(1,1,1,.2);
+    cursor: pointer;
+
+    &:hover .list-exp__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      top: 0;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    background-color: @white;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    top: -1000px;
+    opacity: 0.9;
+    .f-transition-base(top);
+  }
+
+  &__inner-img {
+
+    img {
+      display: block;
+    }
+
+      &--barbershop {
+        background-color: @black;
+      }
+  }
+
+  &__item:hover &__inner-img div {
+    display: block;
+  }
+
+  &__info {
+    padding: 15px;
+    color: @black;
+  }
+
+  &__btn {
+    border-radius: 30px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin-top: auto;
+    display: block;
+    max-width: 160px;
+    color: @white;
+    background-color: #5b43d6;
+    border: 1px solid transparent;
+    text-align: center;
+
+    &:hover {
+      background-color: #452bc7;
+      border-color: #4129bd;
+    }
+  }
+
+  &__title {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    color: @gray;
+    border-radius: @border-radius;
+    overflow: hidden;
+  }
+
+  &__inner-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 110px;
+  }
+}
+
+@media (max-width: @break-md) {
+  .list-exp {
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__info {
+      padding: 8px;
+    }
+
+    &__inner-text {
+      max-height: 100px;
+    }
+  }
+}
+
+// size img 315px na 210px
