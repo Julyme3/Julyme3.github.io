@@ -1,0 +1,425 @@
+.main-navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation__item-list {
+  border-top: 2px solid #ececec;
+}
+
+.main-navigation__link-list {
+  display: block;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+}
+.main-navigation__link-logo {
+  display: block;
+  width: 87px;
+  height: 35px;
+  margin: 0 auto;
+  padding-top: 22.5px;
+  padding-bottom: 22.5px;
+}
+
+.main-navigation__logo {
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+}
+
+.main-navigation__icon-svg {
+  fill: #d3d2d2;
+}
+
+.main-navigation__link-list[href] {
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+}
+
+.main-navigation__item-list .main-navigation__link-search,
+.main-navigation__item-list .main-navigation__link-cart {
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+}
+
+.main-navigation__link-search:hover .main-navigation__link-text,
+.main-navigation__link-cart:hover .main-navigation__link-text {
+  opacity: 0.6;
+}
+
+.main-navigation__link-search:active .main-navigation__link-text,
+.main-navigation__link-cart:active .main-navigation__link-text {
+  opacity: 0.3;
+}
+
+.main-navigation__link-search:hover .main-navigation__icon-svg,
+.main-navigation__link-cart:hover .main-navigation__icon-svg {
+  fill: #63d1bb;
+}
+
+.main-navigation__link-search:active .main-navigation__icon-svg,
+.main-navigation__link-cart:active .main-navigation__icon-svg {
+  fill: #63d1bb;
+  opacity: 0.3;
+}
+
+.main-navigation__link-text {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+@media #{$mobile-widths-only} {
+
+  .main-navigation {
+    min-height: 82px;
+  }
+
+  .main-navigation__list {
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  .main-navigation__item-list {
+    box-sizing: border-box;
+    padding-left: calc((30*100%)/320);
+    padding-right: calc((30*100%)/320);
+  }
+
+  .main-navigation__link-list {
+    padding-left: 45px;
+  }
+
+  .main-navigation--opened .main-navigation__list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .main-navigation--opened .main-navigation__btn-burger {
+    position: absolute;
+    top: 31px;
+    right: 30px;
+    width: 22px;
+    height: 22px;
+    z-index: 20;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10px;
+      width: 2px;
+      height: 22px;
+      transform: rotate(45deg);
+      background-color: #221f1f;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+  }
+
+  .main-navigation--closed .main-navigation__item-list {
+    display: none;
+  }
+
+  .main-navigation--closed .main-navigation__item-list:first-child {
+    display: block;
+  }
+
+  .main-navigation--closed .main-navigation__btn-burger {
+    position: absolute;
+    top: 31px;
+    right: 29px;
+    width: 22px;
+    height: 18px;
+    z-index: 2;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 22px;
+      height: 2px;
+      background-color: #221f1f;
+      box-shadow: 0 8px 0 0 #221f1f,
+                  0 16px 0 0 #221f1f;
+    }
+
+  }
+
+  .main-navigation__item-list:nth-child(n+6) {
+    display: none;
+  }
+
+  .main-navigation--nojs .main-navigation__btn-burger {
+    display: none;
+  }
+
+  .main-navigation--nojs .main-navigation__list {
+    position: static;
+    height: auto;
+  }
+
+  .main-navigation--nojs .main-navigation__item-list {
+    display: block;
+  }
+
+  .main-navigation--nojs .main-navigation__item-list:nth-child(n+6) {
+    display: none;
+  }
+
+  .main-navigation--nojs .main-navigation__link-list {
+    padding-bottom: 27px;
+    padding-bottom: 27px;
+  }
+
+  .main-navigation__link-list {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .main-navigation__logo-tb,
+  .main-navigation__logo-desktop {
+    display: none;
+  }
+
+  .main-navigation__item-list:nth-child(4) .main-navigation__link-list,
+  .main-navigation__item-list:nth-child(5) .main-navigation__link-list {
+    padding-left: 0;
+    margin-left: -4px;
+  }
+
+  .main-navigation__icon-search,
+  .main-navigation__icon-cart {
+    padding-right: 25px;
+    vertical-align: middle;
+  }
+
+}
+
+@media #{$tablet-widths} {
+
+  .main-navigation__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .main-navigation__item-list:nth-child(n+7) {
+    display: none;
+  }
+
+  .main-navigation__item-list {
+    border-top: 0;
+    z-index: 11;
+  }
+
+  .main-navigation__link-list {
+    padding-bottom: 40px;
+    padding-top: 30px;
+    font-size: 15px;
+  }
+
+  .main-navigation__item-list:nth-child(1) {
+    order: -3;
+    margin-right: 205px;
+  }
+
+  .main-navigation__item-list:nth-child(2) .main-navigation__link-list,
+  .main-navigation__item-list:nth-child(3) .main-navigation__link-list,
+  .main-navigation__item-list:nth-child(6) .main-navigation__link-list {
+    padding-top: 12px;
+  }
+
+  .main-navigation__item-list:nth-child(3) {
+    margin-right: auto;
+    margin-left: 35px;
+  }
+
+  .main-navigation__item-list:nth-child(4) {
+    order: -2;
+    margin-left: auto;
+
+    .main-navigation__link-list {
+      width: 83px;
+      margin-right: 30px;
+      border-left: 2px solid #ececec;
+      border-right: 2px solid #ececec;
+    }
+
+  }
+
+  .main-navigation__item-list:nth-child(5) {
+    order: -1;
+    width: 234px;
+  }
+
+  .main-navigation__item-list:nth-child(5) .main-navigation__link-list {
+    padding-left: 48px;
+    font-size: 17px;
+  }
+
+  .main-navigation__item-list:nth-child(6) a {
+    color: #444444;
+    font-weight: 400;
+  }
+
+  .main-navigation__link-logo {
+    width: 115px;
+    height: 48px;
+  }
+
+  .main-navigation__logo-mobile,
+  .main-navigation__logo-desktop {
+    display: none;
+  }
+
+  .main-navigation__item-list:first-child {
+    margin-right: 177px;
+  }
+
+  .main-navigation__item-list:nth-child(4) .main-navigation__link-list {
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-bottom: 28px;
+    padding-top: 35px;
+    font-size: 0;
+  }
+
+  .main-navigation__item-list:nth-child(5) .main-navigation__link-list {
+    padding-left: 0;
+  }
+
+  .main-navigation__icon-cart {
+    padding-right: 26px;
+    vertical-align: middle;
+
+  }
+
+}
+
+@media #{$desktop-widths} {
+
+  .main-navigation__link-list {
+    padding-top: 14px;
+  }
+
+  .main-navigation .main-navigation__item-list:nth-child(2) .main-navigation__link-list,
+  .main-navigation .main-navigation__item-list:nth-child(3) .main-navigation__link-list {
+    padding-bottom: 35px;
+    padding-top: 32px;
+  }
+
+  .main-navigation__item-list:nth-child(4) .main-navigation__link-list {
+    padding-top: 36px;
+    padding-bottom: 25px;
+  }
+
+  .main-navigation__item-list:nth-child(5) .main-navigation__link-list {
+    padding-top: 30px;
+  }
+
+  .main-navigation__item-list:nth-child(6) .main-navigation__link-list {
+    padding-top: 12px;
+  }
+
+  .main-navigation__list .main-navigation__item-list {
+    order: 0;
+  }
+
+  .main-navigation__item-list:nth-child(n+7) {
+    display: block;
+  }
+
+  .main-navigation__item-list:nth-child(1) {
+    margin-right: 23px;
+  }
+
+  .main-navigation__item-list:nth-child(2) {
+    order: -1;
+
+    a {
+      font-size: 17px;
+    }
+
+  }
+
+  .main-navigation__item-list:nth-child(3) {
+    order: -1;
+    margin-left: 68px;
+
+    a {
+      font-size: 17px;
+    }
+
+  }
+
+  .main-navigation__item-list:nth-child(5) {
+
+    a {
+      font-size: 17px;
+    }
+
+  }
+
+  .main-navigation__item-list:nth-child(6) {
+    order: 1;
+  }
+
+  .main-navigation__item-list:nth-child(7) {
+    margin-right: 55px;
+  }
+
+  .main-navigation__item-list:nth-child(8) {
+    margin-right: auto;
+  }
+
+  .main-navigation__link-logo {
+    width: 151px;
+    height: 74px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .main-navigation__logo-tb {
+    display: none;
+  }
+
+  .main-navigation__logo-desktop {
+    display: block;
+  }
+
+}

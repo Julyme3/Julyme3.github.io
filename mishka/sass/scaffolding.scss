@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/opensans.woff2") format("woff2"),
+    url("../fonts/opensans.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/opensansbold.woff2") format("woff2"),
+    url("../fonts/opensansbold.woff") format("woff");
+}
+
+body {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000000;
+  min-width: 320px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.back-to-main {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 12;
+}
+
+.btn-hamburger {
+	@include c-hamburger;
+  position: absolute;
+  right: 0;
+
+	&.is-active {
+		@include c-cross;
+    position: absolute;
+	}
+}
+
+.menu-wrap {
+	width: 0;
+	height: 0;
+	background-color: #009FAA;
+	border-bottom-left-radius: 250px;
+	text-align: center;
+	transition: width 0.3s, height 0.3s;
+	transform-origin: 100% 0;
+
+	a {
+		font-size: 16px;
+		line-height: 22px;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+	}
+
+	&.show {
+    padding-top: 55px;
+		width: 260px;
+		height: 250px;
+
+    .menu {
+      opacity: 1;
+      transition: opacity 0.3s 0.3s;
+    }
+	}
+}
+
+.menu {
+  opacity: 0;
+}

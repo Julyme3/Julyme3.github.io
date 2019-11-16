@@ -1,0 +1,137 @@
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: 320px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 35px;
+  padding-bottom: 45px;
+  background-color: #ffffff;
+  z-index: 12;
+  box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+  border-top: 1px solid #c6c6c6;
+}
+
+.popup--show {
+  display: block;
+}
+
+.popup__title {
+  margin-top: 0;
+  margin-bottom: 25px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.popup__size {
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  color: #444444;
+}
+
+.popup__input {
+  display: none;
+}
+
+.popup__form {
+  font-size: 0;
+}
+
+.popup__label {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  width: calc(250px / 3);
+  margin-right: 5px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 3px solid #ececec;
+  font-size: 17px;
+  line-height: 16px;
+  color: #444444;
+  font-weight: 700;
+
+  &:hover {
+    border-color: #c7c7c7;
+  }
+
+}
+
+.popup__form input[type="radio"]:checked + .popup__label {
+  border-color: #63d1bb;
+}
+
+.popup__label:last-of-type {
+  margin-right: 0;
+}
+
+.popup__add {
+  display: block;
+  margin-top: 30px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 17px;
+  line-height: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #63d1bb;
+  border: none;
+}
+
+@media #{$tablet-widths} {
+
+  .popup {
+    width: 565px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 107px;
+    padding-right: 107px;
+  }
+
+  .popup__title {
+    min-width: 360px;
+    margin-bottom: 35px;
+    font-size: 30px;
+    line-height: 57px;
+  }
+
+  .popup__size {
+    font-size: 17px;
+  }
+
+  .popup__label {
+    width: calc(340px / 3);
+  }
+
+  .popup__add {
+    width: 350px;
+  }
+
+}
+
+// анимация для попапа 
+
+  @keyframes show {
+    0% {top: -2000px};
+    100% {top: 50%};
+  }
+  
+  .popup--show {
+    animation: show 2s forwards;
+  }

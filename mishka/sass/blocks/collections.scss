@@ -1,0 +1,144 @@
+.collections {
+  margin-bottom: 25px;
+}
+
+.collections__link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-right: 130px;
+  padding-left: 32px;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.collections__link-interior {
+  position: relative;
+  background-color: #63d1bb;
+}
+
+.collections__link-interior::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+  width: 42px;
+  height: 63px;
+  background: url("../img/icon-interior.svg") no-repeat 0 0;
+}
+
+.collections__link-toys {
+  position: relative;
+  background-color: #56c3b2;
+}
+
+.collections__link-toys::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+  width: 62px;
+  height: 62px;
+  background: url("../img/icon-toy.svg") no-repeat 0 0;
+}
+
+.collections__link-interior:hover::after {
+  background-image: url("../img/icon-interior-hover.svg");
+}
+
+.collections__link-toys:hover::after {
+  background-image: url("../img/icon-toy-hover.svg");
+}
+
+.collections__link-interior:active::after {
+  background-image: url("../img/icon-interior-active.svg");
+}
+
+.collections__link-toys:active::after {
+  background-image: url("../img/icon-toy-active.svg");
+}
+
+.collections__link {
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+}
+
+.collections__item {
+  @include container;
+}
+
+@media #{$mobile-widths-only} {
+  
+  .collections__link {
+    padding-top: calc((8 * 100%) / 100);
+    padding-bottom: calc((8 * 100%) / 100);
+    padding-left: calc((30 * 100%) / 320);
+  }
+  
+}
+
+@media #{$tablet-widths} {
+
+  .collections {
+    position: relative;
+    margin-bottom: 44px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 19px;
+      background: url("../img/bg-zigzag-fill.svg") repeat-x 0 0;
+    }
+
+  }
+
+  .collections__item {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .collections__link {
+    box-sizing: border-box;
+    width: 334px;
+    padding-top: 26px;
+    padding-bottom: 35px;
+    padding-right: 150px;
+    font-size: 20px;
+    line-height: 30px;
+    transition: transform .9s ease;
+
+    &:hover {
+      top: -5px;
+    }
+
+  }
+
+}
+
+@media #{$desktop-widths} {
+
+  .collections {
+    margin-bottom: 124px;
+  }
+
+  .collections__link {
+    width: 525px;
+    padding-right: 340px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+}

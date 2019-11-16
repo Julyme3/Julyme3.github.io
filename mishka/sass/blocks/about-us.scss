@@ -1,0 +1,164 @@
+.about-us {
+  margin-bottom: 54px;
+}
+
+.about-us__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: $fsize-subtitle-mobile;
+  line-height: 30px;
+}
+
+.about-us__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-us__item {
+  position: relative;
+  padding-top: 60px;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 23.5px;
+}
+
+.about-us__icon {
+  position: absolute;
+  top: 13px;
+  left: 3px;
+
+}
+.about-us__item:last-child {
+  margin-bottom: 0;
+}
+
+.about-us__wrapper {
+  @include container;
+  box-sizing: border-box;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media #{$mobile-widths-only} {
+  
+  .about-us__wrapper {
+    padding-left: calc((30*100%)/320);
+    padding-right: calc((30*100%)/320);
+  }
+
+  .about-us__item {
+    line-height: 20px;
+  }
+
+}
+
+@media #{$tablet-widths} {
+
+  .about-us {
+    margin-bottom: 75px;
+  }
+
+  .about-us__wrapper {
+    box-sizing: content-box;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .about-us__title {
+    margin-bottom: 37px;
+    font-size: $fsize-title-tablet;
+    line-height: 50px;
+  }
+
+  .about-us__list {
+    display: flex;
+    height: 425px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .about-us__item {
+    margin-bottom: 47px;
+    font-size: 20px;
+  }
+
+  .about-us .about-us__item:first-child {
+    width: 230px;
+  }
+
+  .about-us__item:nth-child(3n) {
+    margin-bottom: 0;
+  }
+
+  .about-us__item:nth-child(-n+3) {
+    width: 260px;
+  }
+
+  .about-us__item:nth-child(3) {
+    width: 240px;
+  }
+
+  .about-us__item:nth-child(n+4) {
+    width: 294px;
+    margin-right: 36px;
+  }
+
+  .about-us__icon-flower {
+    left: 12px;
+    top: 5px;
+  }
+
+  .about-us__icon-currency {
+    left: 3px;
+    top: 5px;
+  }
+
+  .about-us__icon-heart {
+    left: 12px;
+    top: 8px;
+  }
+
+  .about-us__icon-cotton {
+    left: 6px;
+    top: 8px;
+  }
+
+  .about-us__icon-rocket {
+    left: -4px;
+    top: 8px;
+  }
+
+  .about-us__icon-surprise {
+    left: -4px;
+    top: 8px;
+  }
+
+}
+
+@media #{$desktop-widths} {
+
+  .about-us {
+    margin-bottom: 82px;
+  }
+
+  .about-us__list {
+    width: 657px;
+  }
+
+  .about-us__title,
+  .about-us__list {
+    padding-left: 175px;
+  }
+
+  .about-us__title {
+    font-size: $fsize-title-desktop;
+    line-height: 57px;
+  }
+
+  .about-us__item:nth-child(n+4) {
+    margin-right: 14px;
+  }
+
+}
