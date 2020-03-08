@@ -19,5 +19,21 @@ img {
 }
 
 .main {
-  min-height: ~"calc(100% - @{header-height} - @{footer-height})";
+  margin-bottom: 20px;
+}
+
+.link--with-gradient {
+  .f-transition-base();
+  display: inline-block;
+  padding: 10px;
+  border-radius: 16px;
+  color: @white;
+  font-size: @font-size-base;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  background-size: 200% auto;
+
+  &:hover {
+    background-position: right center;
+  }
 }
