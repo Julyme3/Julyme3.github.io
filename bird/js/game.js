@@ -56,6 +56,7 @@
     
             if (posX + bird.width >= pipe[i].x && pipe[i].x + pipeUp.width >= posX && (posY <= pipe[i].y + pipeUp.height || posY + bird.height >= pipe[i].y + pipeUp.height + gap) || posY + bird.height >= bg.height - fg.height) {
                 location.reload();
+                console.log('reload');
             }
 
             if (pipe[i].x === 5) {
