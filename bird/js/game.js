@@ -55,12 +55,12 @@
             }
     
             if (posX + bird.width >= pipe[i].x && pipe[i].x + pipeUp.width >= posX && (posY <= pipe[i].y + pipeUp.height || posY + bird.height >= pipe[i].y + pipeUp.height + gap) || posY + bird.height >= bg.height - fg.height) {
-                location.reload(false);
+                //location.reload(false);
+                console.log('reload');
             }
 
             if (pipe[i].x === 5) {
                 score++;
-                scoreAudio.play();
             }
         }
         ctx.drawImage(fg, 0, 0 + bg.height - fg.height);
