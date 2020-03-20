@@ -43,6 +43,7 @@
     function draw() {
       console.log(posX + '   ' + posY);
         ctx.drawImage(bg, 0, 0);
+        ctx.drawImage(bird, posX, posY);
         for (var i = 0; i < pipe.length; i++) {
             ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
             ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
@@ -56,9 +57,8 @@
             }
 
             if (posX + bird.width >= pipe[i].x && pipe[i].x + pipeUp.width >= posX && (posY <= pipe[i].y + pipeUp.height || posY + bird.height >= pipe[i].y + pipeUp.height + gap) || posY + bird.height >= bg.height - fg.height) {
-                location.reload(true);
-                // posY = 200;
-                // posX = 20;
+                document.querySelector("#canvas").style.display = "none";
+                location.reload();
                 console.log('reload');
                 return false;
             }
@@ -68,7 +68,6 @@
             }
         }
         ctx.drawImage(fg, 0, 0 + bg.height - fg.height);
-        ctx.drawImage(bird, posX, posY);
 
         ctx.font = "24px Tahoma";
         ctx.fillText(`Счет: ${score}`, 20, bg.height - 20);
