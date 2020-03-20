@@ -56,10 +56,11 @@
             }
 
             if (posX + bird.width >= pipe[i].x && pipe[i].x + pipeUp.width >= posX && (posY <= pipe[i].y + pipeUp.height || posY + bird.height >= pipe[i].y + pipeUp.height + gap) || posY + bird.height >= bg.height - fg.height) {
-                location.reload(false);
+                location.reload(true);
                 posY = 200;
                 posX = 20;
                 console.log('reload');
+                return false;
             }
 
             if (pipe[i].x === 5) {
